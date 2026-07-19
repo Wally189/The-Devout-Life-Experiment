@@ -14,15 +14,19 @@ This is a personal study resource, not medical treatment, psychotherapy, spiritu
 
 ## Structure
 
-The first course cycle contains 26 gentle weeks. Each week begins on Sunday and normally asks for about 20–30 minutes a day. Readers may follow:
+The first course cycle contains 27 gentle weeks. Each week begins on Sunday and normally asks for about 20–30 minutes a day. Readers may follow:
 
 - the spiritual reading track;
 - the practical stability track;
 - or both together through one proportionate amendment.
 
+Each lesson contains its own reading assignment, companion text, reason for appearing at that point, discernment questions and one suggested amendment.
+
 The weekly rhythm is:
 
 **Orient → Read → Recall → Compare → Examine → Amend → Practise and Review**
+
+The practical track includes a paper register, action pages, a restrained daily list, topic exercises for prayer, calendar, recreation, food, home, work, money, health and repeatable Experiment projects, followed later by a provisional Rule of Life.
 
 The course repeatedly permits a slower pace, repeated weeks and a reduced minimum during illness or disruption. Its central recovery instruction is: **Do not restart. Resume.**
 
