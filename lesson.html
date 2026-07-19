@@ -1,1 +1,105 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lesson — The Devout and Practical Life Experiment</title><link rel="stylesheet" href="styles.css"></head><body><main id="lesson"></main><script src="app.js"></script><script src="site.js"></script><script>DEVOUT.shell('lessons.html');DEVOUT.lessonPage()</script></body></html>
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lesson — The Devout and Practical Life Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="course.css">
+</head>
+<body>
+  <main id="lesson"></main>
+  <script src="app.js"></script>
+  <script src="site.js"></script>
+  <script>
+    DEVOUT.lessonPage = function () {
+      const n = Number(new URLSearchParams(location.search).get('n')) || 1;
+      const l = COURSE.find((item) => item.n === n) || COURSE[0];
+      document.title = `Week ${l.n}: ${l.title} — The Devout and Practical Life Experiment`;
+
+      document.querySelector('#lesson').innerHTML = `
+        <article class="course-page lesson-page">
+          <section class="prayer-strip course-prayer">
+            <h2>Opening prayer</h2>
+            <p>${LESSON_PRAYER}</p>
+            <p class="small">Remain silent for a moment and prepare yourself gently for the session.</p>
+          </section>
+
+          <div class="lesson-number">Week ${l.n} of ${COURSE.length} · ${l.phase}</div>
+          <h2>${l.title}</h2>
+          <section class="course-purpose"><strong>Why this week comes here:</strong> ${l.why}</section>
+
+          <div class="course-accordions lesson-accordions">
+            <details class="course-phase" open>
+              <summary>
+                <span><strong>Readings for this week</strong><small>The principal text and its carefully chosen companion</small></span>
+                <span class="phase-progress">1</span>
+              </summary>
+              <div class="phase-weeks reading-grid">
+                ${readingCard('Primary reading', l.primary, l.detail, l.primaryUrl)}
+                ${readingCard('Companion or Church reading', l.companion, l.companionDetail, l.companionUrl)}
+              </div>
+            </details>
+
+            <details class="course-phase" open>
+              <summary>
+                <span><strong>The recommended plan</strong><small>Sunday to Saturday · about 20–30 minutes a day</small></span>
+                <span class="phase-progress">2</span>
+              </summary>
+              <div class="phase-weeks session-plan">
+                <ol>
+                  <li><strong>Sunday — orient:</strong> pray, read this page, mark the assigned chapters and choose the spiritual track, practical track or both.</li>
+                  <li><strong>Monday — read:</strong> read roughly the first half of the primary selection slowly. Stop when the allotted time ends.</li>
+                  <li><strong>Tuesday — continue and recall:</strong> finish or continue the primary reading; close the book and write its main point from memory.</li>
+                  <li><strong>Wednesday — companion:</strong> read the companion selection and note one addition, clarification or correction.</li>
+                  <li><strong>Thursday — examine:</strong> answer one or more of the week-specific questions below.</li>
+                  <li><strong>Friday — amend:</strong> prepare the one stated amendment, adapting its scale where necessary.</li>
+                  <li><strong>Saturday — practise and review:</strong> note what happened and complete the four-question handwritten review.</li>
+                </ol>
+                <p><strong>Minimum faithful week:</strong> read the primary text, answer one question, choose one amendment and complete the short review. Reduce the exercise before abandoning it.</p>
+              </div>
+            </details>
+
+            <details class="course-phase">
+              <summary>
+                <span><strong>Questions for this week</strong><small>Use only what helps you reach a truthful, proportionate answer</small></span>
+                <span class="phase-progress">3</span>
+              </summary>
+              <div class="phase-weeks">
+                <ul>${l.questions.map((question) => `<li>${question}</li>`).join('')}</ul>
+                ${hints()}
+              </div>
+            </details>
+
+            <details class="course-phase">
+              <summary>
+                <span><strong>One amendment</strong><small>A single concrete practice arising from the reading</small></span>
+                <span class="phase-progress">4</span>
+              </summary>
+              <div class="phase-weeks">
+                <p>${l.amend}</p>
+                <p><strong>One only.</strong> Make it smaller where health, duty or charity requires.</p>
+              </div>
+            </details>
+
+            <details class="course-phase">
+              <summary>
+                <span><strong>Saturday handwritten review</strong><small>Four questions are enough for an ordinary week</small></span>
+                <span class="phase-progress">5</span>
+              </summary>
+              <div class="phase-weeks">${journal()}</div>
+            </details>
+          </div>
+
+          <p class="lesson-nav">
+            ${l.n > 1 ? `<a class="button secondary" href="lesson.html?n=${l.n - 1}">← Previous</a>` : `<a class="button secondary" href="lessons.html">← Course</a>`}
+            ${l.n < COURSE.length ? `<a class="button" href="lesson.html?n=${l.n + 1}">Next week →</a>` : `<a class="button" href="rule.html">Review the Rule of Life →</a>`}
+          </p>
+        </article>`;
+    };
+
+    DEVOUT.shell('lessons.html');
+    DEVOUT.lessonPage();
+  </script>
+</body>
+</html>
