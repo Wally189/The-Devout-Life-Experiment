@@ -94,10 +94,10 @@ function weekRow(lesson){
 
 function renderCourse(){
   const lessons=DEVOUT.LESSONS;
-  document.querySelector('#course-accordions').innerHTML=COURSE_GROUPS.map((group,index)=>{
+  document.querySelector('#course-accordions').innerHTML=COURSE_GROUPS.map((group)=>{
     const groupLessons=group.weeks.map(n=>lessons.find(l=>l.n===n)).filter(Boolean);
     const doneCount=groupLessons.filter(l=>completed.has(l.n)).length;
-    return `<details class="course-phase" ${index===0?'open':''}>
+    return `<details class="course-phase">
       <summary>
         <span><strong>${group.title}</strong><small>${group.description}</small></span>
         <span class="phase-progress">${doneCount}/${groupLessons.length}</span>
