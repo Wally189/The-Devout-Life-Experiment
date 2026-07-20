@@ -41,29 +41,44 @@
               </div>
             </details>
 
-            <details class="course-phase">
+            <details class="course-phase" open>
               <summary>
-                <span><strong>The recommended plan</strong><small>Sunday to Saturday · about 20–30 minutes a day</small></span>
+                <span><strong>The weekly method</strong><small>Sunday to Saturday · use this method for every lesson</small></span>
                 <span class="phase-progress">2</span>
               </summary>
               <div class="phase-weeks session-plan">
                 <ol>
-                  <li><strong>Sunday — orient:</strong> pray, read this page, mark the assigned chapters and choose the spiritual track, practical track or both.</li>
-                  <li><strong>Monday — read:</strong> read roughly the first half of the primary selection slowly. Stop when the allotted time ends.</li>
-                  <li><strong>Tuesday — continue and recall:</strong> finish or continue the primary reading; close the book and write its main point from memory.</li>
-                  <li><strong>Wednesday — companion:</strong> read the companion selection and note one addition, clarification or correction.</li>
-                  <li><strong>Thursday — examine:</strong> answer one or more of the week-specific questions below.</li>
-                  <li><strong>Friday — amend:</strong> prepare the one stated amendment, adapting its scale where necessary.</li>
-                  <li><strong>Saturday — practise and review:</strong> note what happened and complete the four-question handwritten review.</li>
+                  <li><strong>Sunday — first reading:</strong> read the assigned passage from St Francis de Sales straight through. Do not analyse it heavily. Simply notice what strikes you.</li>
+                  <li><strong>Monday — second reading and rough notes:</strong> read the same passage again slowly. Note the main argument, important images, difficult points and anything personally challenging.</li>
+                  <li><strong>Tuesday — first reading of the companion text:</strong> read the assigned Scripture, Catechism, saint, papal or other approved Catholic text.</li>
+                  <li><strong>Wednesday — second reading and notes:</strong> read the companion text again and note how it confirms, clarifies or qualifies St Francis’s teaching.</li>
+                  <li><strong>Thursday — questions and optional rereading:</strong> answer the lesson questions below. Reread relevant passages where necessary.</li>
+                  <li><strong>Friday — examination of conscience:</strong> examine the week’s theme, distinguishing actual sin from temptation, weakness, disorderly habit, neglected duty and ordinary room for growth.</li>
+                  <li><strong>Saturday — confession and amendment:</strong> go to Confession where appropriate, needed and reasonably available. Then choose one principal amendment and, if useful, one supporting practice. Repeat an existing amendment rather than inventing a new one when it still needs work.</li>
                 </ol>
-                <p><strong>Minimum faithful week:</strong> read the primary text, answer one question, choose one amendment and complete the short review. Reduce the exercise before abandoning it.</p>
+                <p><strong>Minimum faithful week:</strong> read the primary text, answer one question and choose one proportionate amendment. Reduce the exercise before abandoning it.</p>
+              </div>
+            </details>
+
+            <details class="course-phase">
+              <summary>
+                <span><strong>Rough notes are enough</strong><small>There is no single right way to do this</small></span>
+                <span class="phase-progress">3</span>
+              </summary>
+              <div class="phase-weeks">
+                <p>You do not need a beautiful journal, elaborate planner or polished study notes. A battered old notepad is perfectly sufficient.</p>
+                <p>Your notes may be short bullet points, underlined phrases, rough sketches, diagrams, personal reflections or one sentence about how to apply the lesson today. The purpose is not to produce impressive notes. It is to understand the lesson, pray with it and begin applying it in ordinary life.</p>
+                <figure class="rough-notes-example">
+                  <img src="images/rough-notes-example.jpg" alt="Example of rough handwritten notes on the first chapters of Introduction to the Devout Life">
+                  <figcaption>Example only: simple handwritten notes, small sketches and one practical resolution. There is no right way to take notes for this course.</figcaption>
+                </figure>
               </div>
             </details>
 
             <details class="course-phase">
               <summary>
                 <span><strong>Questions for this week</strong><small>Use only what helps you reach a truthful, proportionate answer</small></span>
-                <span class="phase-progress">3</span>
+                <span class="phase-progress">4</span>
               </summary>
               <div class="phase-weeks">
                 <ul>${l.questions.map((question) => `<li>${question}</li>`).join('')}</ul>
@@ -73,21 +88,24 @@
 
             <details class="course-phase">
               <summary>
-                <span><strong>One amendment</strong><small>A single concrete practice arising from the reading</small></span>
-                <span class="phase-progress">4</span>
+                <span><strong>One principal amendment</strong><small>A single concrete practice arising from the reading</small></span>
+                <span class="phase-progress">5</span>
               </summary>
               <div class="phase-weeks">
                 <p>${l.amend}</p>
-                <p><strong>One only.</strong> Make it smaller where health, duty or charity requires.</p>
+                <p><strong>One principal amendment is normally enough.</strong> Add one supporting practice only where it genuinely helps. Continue last week’s amendment when necessary rather than accumulating resolutions.</p>
               </div>
             </details>
 
             <details class="course-phase">
               <summary>
-                <span><strong>Saturday handwritten review</strong><small>Four questions are enough for an ordinary week</small></span>
-                <span class="phase-progress">5</span>
+                <span><strong>End-of-week review</strong><small>A brief handwritten review is enough</small></span>
+                <span class="phase-progress">6</span>
               </summary>
-              <div class="phase-weeks">${journal()}</div>
+              <div class="phase-weeks">
+                <p>Ask: What have I understood? What have I seen in myself? What needs to change? What one amendment should I now practise?</p>
+                ${journal()}
+              </div>
             </details>
           </div>
 
